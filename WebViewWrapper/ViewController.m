@@ -14,9 +14,9 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (void)viewDidLoad {    
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html" subdirectory:@"html"];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
 }
 
 
