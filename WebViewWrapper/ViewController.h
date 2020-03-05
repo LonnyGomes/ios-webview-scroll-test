@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <WebKit/WebKit.h>
 @interface ViewController : UIViewController
 
-@property(nonatomic, retain) IBOutlet UIWebView *webView;
+@property(nonatomic, retain) IBOutlet WKWebView *webView;
 
 @end
 
