@@ -14,9 +14,14 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {    
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html" subdirectory:@"html"];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:@"html"];
+    NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
+
+    NSURL *baseUrl = [[NSBundle mainBundle] URLForResource:@"html" withExtension:nil];
+    
+    [self.webView loadHTMLString:htmlString baseURL:baseUrl];
 }
 
 
